@@ -24,11 +24,11 @@ public class PolicyPremiumCalculatorTest {
 	private PolicyObject policyObject;
 
 	@InjectMocks
-	private PolicyPremiumCalculator premiumCalculator;
+	private PremiumCalculator premiumCalculator;
 
 	@Test
 	public void calculatesZeroPremiumWhenNoObjectsExist() {
-		given(policy.getPolicyOvjects()).willReturn(emptyList());
+		given(policy.getPolicyObjects()).willReturn(emptyList());
 
 		BigDecimal premium = premiumCalculator.calculate(policy);
 
@@ -37,7 +37,7 @@ public class PolicyPremiumCalculatorTest {
 
 	@Test
 	public void calculatesPolicyPremium() {
-		given(policy.getPolicyOvjects()).willReturn(singletonList(policyObject));
+		given(policy.getPolicyObjects()).willReturn(singletonList(policyObject));
 		given(policyObject.getSumInsured()).willReturn(BigDecimal.TEN);
 
 		BigDecimal premium = premiumCalculator.calculate(policy);

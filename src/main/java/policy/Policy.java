@@ -10,6 +10,6 @@ import policy.object.PolicyObject;
 @Getter
 public class Policy {
 
-	private final List<PolicyObject> policyOvjects;
+	private final List<PolicyObject> policyObjects;
 
 }
