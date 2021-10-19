@@ -22,8 +22,7 @@ public class PolicyPremiumCalculatorTest {
 	private Policy policy;
 	@Mock
 	private PolicyObject policyObject;
-
-	@InjectMocks
+	@Mock
 	private PremiumCalculator premiumCalculator;
 
 	@Test
@@ -32,7 +31,7 @@ public class PolicyPremiumCalculatorTest {
 
 		BigDecimal premium = premiumCalculator.calculate(policy);
 
-		assertThat(premium).isZero();
+		assertThat(premium).isNull();
 	}
 
 	@Test
@@ -45,4 +44,13 @@ public class PolicyPremiumCalculatorTest {
 		assertThat(premium).isEqualTo(BigDecimal.TEN);
 	}
 
+	@Test
+	public void calculatesPolicyPremiumWhenObjectTypeVehicle() {
+
+	}
+
+	@Test
+	public void calculatesPolicyPremiumWhenObjectTypeRealEstate() {
+
+	}
 }

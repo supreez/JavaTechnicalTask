@@ -11,5 +11,5 @@ import policy.object.PolicyObject;
 public class Policy {
 
 	private final List<PolicyObject> policyObjects;
-
+	
 }
