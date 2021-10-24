@@ -8,8 +8,8 @@ import policy.object.PolicyObject;
 
 @Builder
 @Getter
-public class Policy {
+public class Policy{
 
 	private final List<PolicyObject> policyObjects;
-	
+
 }
