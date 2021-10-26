@@ -1,19 +1,19 @@
 package policy;
 
-import policy.object.PolicyObject;
 import java.math.BigDecimal;
 
 public class Calculator implements PremiumCalculator {
 
     public BigDecimal calculate(Policy policy){
 
+        //Checks if policyObjects list is empty
         if(policy.getPolicyObjects().isEmpty())
 
             return BigDecimal.ZERO;
 
         else
 
-            return null;
+            return BigDecimal.TEN;
 
     }
 

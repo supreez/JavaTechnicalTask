@@ -24,9 +24,6 @@ public class PolicyPremiumCalculatorTest {
 	@Mock
 	private PolicyObject policyObject;
 
-	@Mock
-	private PremiumCalculator premiumCalculator;
-
 	@InjectMocks
 	private Calculator calculator;
 
@@ -44,10 +41,10 @@ public class PolicyPremiumCalculatorTest {
 
 	@Test
 	public void calculatesPolicyPremium() {
-		given(policy.getPolicyObjects()).willReturn(singletonList(policyObject));
-		given(policyObject.getSumInsured()).willReturn(BigDecimal.TEN);
 
-		System.out.println(policy.getPolicyObjects());
+		given(policyObject.getSumInsured()).willReturn(BigDecimal.TEN);
+		given(policy.getPolicyObjects()).willReturn(singletonList(policyObject));
+		//Couldn't figure out how to attach sumInsured to policyObjects list
 
 		BigDecimal premium = calculator.calculate(policy);
 
@@ -57,10 +54,14 @@ public class PolicyPremiumCalculatorTest {
 	@Test
 	public void calculatesPolicyPremiumWhenObjectTypeVehicle() {
 
+		//Calculates premium based on object type being Vehicle
+
 	}
 
 	@Test
 	public void calculatesPolicyPremiumWhenObjectTypeRealEstate() {
+
+		//Calculates premium based on object type being Real Estate
 
 	}
 }
